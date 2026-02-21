@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tetris</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <aside id="panel-left">
+      <div class="stat-box">
+        <span class="label">SCORE</span>
+        <span class="value" id="score">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="label">HIGH SCORE</span>
+        <span class="value" id="high-score">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="label">LEVEL</span>
+        <span class="value" id="level">1</span>
+      </div>
+      <div class="stat-box">
+        <span class="label">LINES</span>
+        <span class="value" id="lines">0</span>
+      </div>
+    </aside>
+
+    <main id="game-area">
+      <canvas id="game-canvas"></canvas>
+      <div id="overlay">
+        <h1 id="overlay-title">TETRIS</h1>
+        <p id="overlay-message">Press Enter to Start</p>
+        <p id="overlay-score"></p>
+      </div>
+    </main>
+
+    <aside id="panel-right">
+      <div class="preview-box">
+        <span class="label">NEXT</span>
+        <canvas id="next-canvas"></canvas>
+      </div>
+      <div class="preview-box">
+        <span class="label">HOLD</span>
+        <canvas id="hold-canvas"></canvas>
+      </div>
+      <div id="controls-hint">
+        <p><span class="key">← →</span> Move</p>
+        <p><span class="key">↑ / Z</span> Rotate</p>
+        <p><span class="key">↓</span> Soft Drop</p>
+        <p><span class="key">Space</span> Hard Drop</p>
+        <p><span class="key">C</span> Hold</p>
+        <p><span class="key">P / Esc</span> Pause</p>
+        <p><span class="key">Enter</span> Start</p>
+      </div>
+    </aside>
+
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

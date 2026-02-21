@@ -1,0 +1,170 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #1a1a2e;
+  color: #eee;
+  font-family: 'Courier New', Courier, monospace;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 160px auto 160px;
+  gap: 16px;
+  align-items: start;
+  padding: 20px;
+}
+
+/* ---- Game Area ---- */
+#game-area {
+  position: relative;
+}
+
+#game-canvas {
+  display: block;
+  border: 2px solid #444;
+}
+
+/* ---- Overlay ---- */
+#overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.82);
+  z-index: 10;
+  gap: 12px;
+}
+
+#overlay.hidden {
+  display: none;
+}
+
+#overlay h1 {
+  font-size: 42px;
+  letter-spacing: 8px;
+  color: #00f0f0;
+  text-shadow: 0 0 20px #00f0f0aa;
+}
+
+#overlay p {
+  font-size: 14px;
+  color: #ccc;
+  letter-spacing: 1px;
+}
+
+#overlay-score {
+  font-size: 18px;
+  color: #f0a000;
+  font-weight: bold;
+}
+
+/* ---- Panels ---- */
+#panel-left,
+#panel-right {
+  padding-top: 4px;
+}
+
+.stat-box {
+  margin-bottom: 24px;
+}
+
+.label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.value {
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* ---- Preview Boxes ---- */
+.preview-box {
+  margin-bottom: 24px;
+}
+
+#next-canvas,
+#hold-canvas {
+  display: block;
+  margin-top: 8px;
+  border: 1px solid #333;
+  background: #111;
+}
+
+/* ---- Controls Hint ---- */
+#controls-hint {
+  margin-top: 8px;
+  border-top: 1px solid #333;
+  padding-top: 12px;
+}
+
+#controls-hint p {
+  font-size: 11px;
+  color: #777;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.key {
+  display: inline-block;
+  background: #2a2a3e;
+  border: 1px solid #555;
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 10px;
+  color: #aaa;
+  white-space: nowrap;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  #app {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  #panel-left {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    order: 1;
+  }
+
+  #game-area {
+    order: 0;
+  }
+
+  #panel-right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    order: 2;
+  }
+
+  .preview-box {
+    margin-bottom: 0;
+  }
+
+  #controls-hint {
+    display: none;
+  }
+}
